@@ -37,7 +37,7 @@ combination is offered.</string>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
     <key>ParentRecipe</key>
-    <string>/141.233.4.91/munki_repo/Test.download.recipe</string>
+    <string>com.github.autopkg.download.firefox-rc-en_US</string>
     <key>Process</key>
     <array>
         <dict>
