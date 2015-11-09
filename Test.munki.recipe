@@ -37,7 +37,7 @@ combination is offered.</string>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.UWO-MIO.MIO/Test.download</string>
+    <string>com.github.UWO-MIO.MIO/Test.download.recipe</string>
     <key>Process</key>
     <array>
         <dict>
