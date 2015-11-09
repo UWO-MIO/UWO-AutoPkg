@@ -36,7 +36,7 @@ combination is offered.</string>
                 <string>%LOCALE%</string>
             </dict>
             <key>Processor</key>
-            <string>URLProvider</string>
+            <string>MozillaURLProvider</string>
         </dict>
         <dict>
             <key>Arguments</key>
