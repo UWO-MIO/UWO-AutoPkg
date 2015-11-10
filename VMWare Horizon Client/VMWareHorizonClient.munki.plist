@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>DESCRIPTION HERE!</string>
 	<key>Identifier</key>
-	<string>com.github.scriptingosx.munki.VMwareHorizonClient</string>
+	<string>com.github.autopkg.MIO.munki.VMwareHorizonClient</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_CATEGORY</key>

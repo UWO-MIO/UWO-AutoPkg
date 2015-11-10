@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads latest version of Adium and builds an Apple installer pkg.</string>
     <key>Identifier</key>
-    <string>com.github.autopkg.pkg.Adium</string>
+    <string>com.github.autopkg.MIO.pkg.Adium</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
