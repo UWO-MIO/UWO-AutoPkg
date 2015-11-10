@@ -41,7 +41,7 @@
 	<key>MinimumVersion</key>
 	<string>0.4.3</string>
 	<key>ParentRecipe</key>
-	<string>com.github.scriptingosx.download.VMwareHorizonClient</string>
+	<string>com.github.autopkg.MIO.download.VMwareHorizonClient</string>
 	<key>Process</key>
 	<array>
 		<dict>
