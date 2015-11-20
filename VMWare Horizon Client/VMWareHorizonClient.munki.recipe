@@ -19,7 +19,7 @@
 				<string>testing</string>
 			</array>
 			<key>category</key>
-			<string>%MUNKI_CATEGORY%</string>
+			<string>Productivity</string>
 			<key>description</key>
 			<string>VMware Horizon Client for Mac allows you to connect to your VMware Horizon virtual desktop from your device of choice giving you on-the-go access from any location.</string>
 			<key>developer</key>

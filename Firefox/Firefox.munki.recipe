@@ -24,6 +24,8 @@ combination is offered.</string>
             <array>
                 <string>testing</string>
             </array>
+            <key>category</key>
+            <string>Browsers</string>
             <key>description</key>
             <string>Mozilla Firefox is a free and open source web browser.</string>
             <key>display_name</key>

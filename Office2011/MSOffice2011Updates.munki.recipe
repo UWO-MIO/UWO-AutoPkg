@@ -62,6 +62,8 @@ certificate for the downloaded update can still be manually verified, however.
             <array>
                 <string>testing</string>
             </array>
+            <key>category</key>
+            <string>Microsoft Office 2011</string>
             <key>update_for</key>
             <array>
                 <string>Office2011</string>
