@@ -22,10 +22,6 @@
 			<string>Slack is a platform for team communication: everything in one place, instantly searchable, available wherever you go.</string>
 			<key>display_name</key>
 			<string>Slack</string>
-			<key>category</key>
-			<string>Communication</string>
-			<key>developer</key>
-			<string>Slack</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -61,17 +57,6 @@
 			</dict>
 			<key>Processor</key>
 			<string>DmgCreator</string>
-		</dict>
-		<dict>
-			<key>Processor</key>
-			<string>Versioner</string>
-			<key>Arguments</key>
-			<dict>
-				<key>input_plist_path</key>
-				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg/Slack.app/Contents/Info.plist</string>
-				<key>plist_version_key</key>
-				<string>CFBundleShortVersionString</string>
-			</dict>
 		</dict>
 		<dict>
 			<key>Arguments</key>
