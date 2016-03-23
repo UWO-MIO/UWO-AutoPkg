@@ -37,7 +37,7 @@ http://update.evernote.com/prerelease/ENMac/EvernoteMacUpdate.xml
     <key>MinimumVersion</key>
     <string>0.2.0</string>
     <key>ParentRecipe</key>
-	<string>com.github.autopkg.download.Evernote</string>
+	<string>com.github.autopkg.MIO.download.Evernote</string>
     <key>Process</key>
 	<array>
         <dict>
