@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Download recipe for VMware Fusion Guest Tools</string>
+	<key>Identifier</key>
+	<string>com.github.MIO.download.VMwareFusionGuestTools</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>com.vmware.fusion.tools.darwin.zip.tar</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.2.5</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Processor</key>
+			<string>VMwareFusionGuestToolsURLProvider</string>
+			<key>Arguments</key>
+			<dict>
+				<key>product_name</key>
+				<string>fusion.xml</string>
+				<key>guest_tool</key>
+<!-- Pick One per Guest Tool Download.  Suggest changing the NAME at top for correct filename -->
+				<string>com.vmware.fusion.tools.darwin.zip.tar</string>
+<!-- 				<string>com.vmware.fusion.tools.freebsd.zip.tar</string> -->
+<!-- 				<string>com.vmware.fusion.tools.linux.zip.tar</string> -->
+<!-- 				<string>com.vmware.fusion.tools.netware.zip.tar</string> -->
+<!-- 				<string>com.vmware.fusion.tools.solaris.zip.tar</string> -->
+<!-- 				<string>com.vmware.fusion.tools.windows.zip.tar</string> -->
+<!-- 				<string>com.vmware.fusion.tools.winPre2k.zip.tar</string> -->
+				<key>base_url</key>
+				<string>https://softwareupdate.vmware.com/cds/vmw-desktop/</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>URLDownloader</string>
+			<key>Arguments</key>
+			<dict>
+				<key>filename</key>
+				<string>%NAME%</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Processor</key>
+			<string>EndOfCheckPhase</string>
+		</dict>
+	</array>
+</dict>
+</plist>
