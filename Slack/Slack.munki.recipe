@@ -5,13 +5,13 @@
 	<key>Description</key>
 	<string>Downloads the latest &apos;Slack&apos; and imports into Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.killahquam.munki.slack</string>
+	<string>com.github.autopkg.MIO.Munki.Slack</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
 		<string>Slack</string>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps</string>
+		<string>apps/Slack</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
