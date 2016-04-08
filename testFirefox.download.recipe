@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+      <string> This is a test built very similar to the Firefox.download.recipe </string>
+      <key>identifier</key>
+        <string>com.github.autopkg.MIO.download.firefox</string>
+          <key>description</key>
+            <string>The (.com...) above is how we "identify" what this recipie does. it is
+            a fixed naming sequence. Do not edit this once the script is being used. It may
+          create errors in how this recipe functions and how other recipes interact with it.</string>
+            <key>input</key>
+          <dict>
+            <key>RELEASE</key>
+            <string>Latest</string>
+            <key>LOCALE</key>
+            <string>en-US</string>
+            <key>NAME</key>
+            <string>Test</string>
+            <key>DISABLE_CODE_SIGNATURE_VERIFICATION</key>
+            <false/>
+          </dict>
+            <key>Minimum Version</key>
+            <string>0.4.1</string>
+            <key>description</key>
+              <string>The above inputs will be used in the later parts of this recipe
+            as replacements for having to type out each value every time that we want to use it.</string>
+            <key>Process</key>
+        <array>
+              <dict>
+                  <key>Arguments</key>
+                <dict>
+                  <key>product_name</key>
+                  <string>firefox</string>
+                  <key>release</key>
+                  <string>%RELEASE%</string>
+                  <key>locale</key>
+                  <string>%LOCALE%</string>
+                </dict>
+                  <key>Processor</key>
+                  <string>MozillaURLProvider</string>
+              </dict>
+            <dict>
+              <key>Arguments</key>
+              <dict>
+                <key>filename</key>
+                <string>%NAME%.dmg</string>
+              </dict>
+                <key>Processor</key>
+                <string>URLDownloader</string>
+            </dict>
+              <dict>
+                <key>Processor</key>
+                <string>EndofCheckPhase</string>
+              </dict>
+        </array>
+  </dict>
+</plist>
