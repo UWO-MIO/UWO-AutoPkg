@@ -11,12 +11,12 @@
 		<key>NAME</key>
 		<string>Slack</string>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps</string>
+		<string>apps/slack</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
 			<array>
-				<string>testing</string>
+				<string>Development</string>
 			</array>
 			<key>description</key>
 			<string>Slack is a platform for team communication: everything in one place, instantly searchable, available wherever you go.</string>

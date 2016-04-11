@@ -11,7 +11,7 @@
 		<key>NAME</key>
 		<string>VMwareFusion</string>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/VMware</string>
+		<string>apps/VMware/fusion</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>name</key>
@@ -26,7 +26,7 @@
 			<string></string>
 			<key>catalogs</key>
 			<array>
-				<string>testing</string>
+				<string>Development</string>
 			</array>
 		</dict>
 	</dict>

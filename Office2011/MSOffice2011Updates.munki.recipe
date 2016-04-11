@@ -23,7 +23,7 @@ certificate for the downloaded update can still be manually verified, however.
         <key>NAME</key>
         <string>Office2011_update</string>
         <key>MUNKI_REPO_SUBDIR</key>
-        <string>apps/Office2011</string>
+        <string>apps/microsoft/office2011</string>
         <key>VERSION</key>
         <string>latest</string>
         <key>CULTURE_CODE</key>
@@ -60,7 +60,7 @@ certificate for the downloaded update can still be manually verified, however.
             </array>
             <key>catalogs</key>
             <array>
-                <string>testing</string>
+                <string>Development</string>
             </array>
             <key>category</key>
             <string>Microsoft Office 2011</string>

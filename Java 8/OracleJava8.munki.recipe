@@ -21,14 +21,14 @@ the prefPane bundle, which has historically had consistent versioning.
     <key>Input</key>
     <dict>
         <key>MUNKI_REPO_SUBDIR</key>
-        <string>plugins/Java</string>
+        <string>apps/oracle</string>
         <key>NAME</key>
         <string>OracleJava8</string>
         <key>pkginfo</key>
         <dict>
             <key>catalogs</key>
             <array>
-                <string>testing</string>
+                <string>Development</string>
             </array>
             <key>description</key>
             <string>Java SE Runtime Environment 8 enables support for running Java-powered applets and applications.</string>

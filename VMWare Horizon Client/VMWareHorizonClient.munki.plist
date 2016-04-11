@@ -11,12 +11,12 @@
 		<key>MUNKI_CATEGORY</key>
 		<string>Productivity</string>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/vmware</string>
+		<string>apps/vmware/horizon</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
 			<array>
-				<string>testing</string>
+				<string>Development</string>
 			</array>
 			<key>category</key>
 			<string>%MUNKI_CATEGORY%</string>

@@ -11,12 +11,12 @@
         <key>NAME</key>
         <string>GoogleChrome</string>
         <key>MUNKI_REPO_SUBDIR</key>
-        <string>apps/Google Chrome</string>
+        <string>apps/Google</string>
         <key>pkginfo</key>
         <dict>
             <key>catalogs</key>
             <array>
-                <string>testing</string>
+                <string>Development</string>
             </array>
             <key>category</key>
             <string>Browsers</string>
