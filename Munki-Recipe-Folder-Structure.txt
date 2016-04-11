@@ -1,0 +1,7 @@
+This will list how each munki recipe for each application creates the folder path in the munki repo. Assume each example is in "munki_repo/pkgs/"
+
+ Adium--> apps/Adium
+Adobe Flash Player --> apps/Adobe/FlashPlayer
+Evernote --> apps/evernote
+
+#Not complete
