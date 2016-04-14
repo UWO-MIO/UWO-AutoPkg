@@ -36,7 +36,7 @@ VERSION currently only supports 'latest'.</string>
             </array>
             <key>catalogs</key>
             <array>
-                <string>Development</string>
+                <string>Incoming</string>
             </array>
             <key>name</key>
             <string>%NAME%</string>

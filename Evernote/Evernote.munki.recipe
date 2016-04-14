@@ -22,7 +22,7 @@ http://update.evernote.com/prerelease/ENMac/EvernoteMacUpdate.xml
         <dict>
             <key>catalogs</key>
             <array>
-                <string>Development</string>
+                <string>Incoming</string>
             </array>
             <key>description</key>
             <string>Evernote makes it easy to remember things big and small from your everyday life using your computer, phone, tablet and the web.</string>

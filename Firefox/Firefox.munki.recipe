@@ -22,7 +22,7 @@ combination is offered.</string>
         <dict>
             <key>catalogs</key>
             <array>
-                <string>Development</string>
+                <string>Incoming</string>
             </array>
             <key>category</key>
             <string>Browsers</string>

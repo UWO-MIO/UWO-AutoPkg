@@ -26,7 +26,7 @@
 			<string></string>
 			<key>catalogs</key>
 			<array>
-				<string>Development</string>
+				<string>Incoming</string>
 			</array>
 		</dict>
 	</dict>

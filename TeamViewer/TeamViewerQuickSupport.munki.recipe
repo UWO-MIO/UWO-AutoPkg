@@ -23,7 +23,7 @@
 			</array>
 			<key>catalogs</key>
 			<array>
-				<string>Development</string>
+				<string>Incoming</string>
 			</array>
 			<key>category</key>
 			<string>%MUNKI_CATEGORY%</string>
