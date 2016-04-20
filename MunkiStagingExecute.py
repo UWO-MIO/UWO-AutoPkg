@@ -16,8 +16,8 @@
 """autopkg processor to run makecatalogs on a Munki repo"""
 
 import subprocess
-subprocess.call(['/Library/Server/web/data/sites/default/munki_repo/scripts/munkistagingexecute.sh'])
-0
+subprocess.call(['/Library/Server/web/data/sites/default/munki_repo/Scripts/MunkiStagingExecute'])
+exit 0
 
 if __name__ == "__main__":
     PROCESSOR = MakeCatalogsProcessor()
