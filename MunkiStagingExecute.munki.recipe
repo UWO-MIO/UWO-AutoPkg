@@ -3,10 +3,9 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Rebuilds Munki catalogs in munki_repo_path if any other recipe in the same autopkg run imported something.
-Use -k force_rebuild=YES to force a rebuild.</string>
+    <string>Runs MunkiStagingExecute</string>
     <key>Identifier</key>
-    <string>com.github.MIO.munki.makecatalogs</string>
+    <string>com.github.MIO.munki.munkistagingexecute</string>
     <key>Input</key>
     <dict>
     </dict>
@@ -16,12 +15,7 @@ Use -k force_rebuild=YES to force a rebuild.</string>
     <array>
         <dict>
             <key>Processor</key>
-            <string>MakeCatalogsProcessor</string>
-            <key>Arguments</key>
-            <dict>
-                <key>munki_repo_path</key>
-                <string>%MUNKI_REPO%</string>
-            </dict>
+            <string>MunkiStagingExecute</string>
         </dict>
     </array>
 </dict>
