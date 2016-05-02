@@ -17,7 +17,6 @@
 
 import subprocess
 subprocess.call(['/Library/Server/web/data/sites/default/munki_repo/Scripts/MunkiStagingExecute'])
-exit 0
 
 if __name__ == "__main__":
     PROCESSOR = MakeCatalogsProcessor()
