@@ -3,27 +3,33 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the latest RStudio application. Original recipe by Matt Hansen - https://github.com/autopkg/hansen-m-recipes</string>
+    <string>Downloads the latest RStudio installer package.</string>
     <key>Identifier</key>
-    <string>com.github.rtrouton.download.RStudio</string>
+    <string>com.github.hansen-m.download.RStudio</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
         <string>RStudio</string>
+        <key>SEARCH_URL</key>
+        <string>https://www.rstudio.com/products/rstudio/download/</string>
+        <key>SEARCH_PATTERN</key>
+        <string>(?P&lt;dmg&gt;RStudio-(?P&lt;version&gt;[0-9.]+)\.dmg)</string>
+        <key>DOWNLOAD_MIRROR</key>
+        <string>http://download1.rstudio.org</string>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.2.9</string>
+    <string>0.5.1</string>
     <key>Process</key>
     <array>
        <dict>
             <key>Processor</key>
-            <string>URLTextSearcher</string>
+            <string>CURLTextSearcher</string>
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>http://www.rstudio.com/ide/download/desktop</string>
+                <string>%SEARCH_URL%</string>
                 <key>re_pattern</key>
-                <string>(?P&lt;url&gt;http.*?RStudio-.*\.dmg)</string>
+                <string>%SEARCH_PATTERN%</string>
             </dict>
         </dict>
         <dict>
@@ -32,7 +38,7 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>%url%</string>
+                <string>%DOWNLOAD_MIRROR%/%dmg%</string>
                 <key>filename</key>
                 <string>%NAME%.dmg</string>
             </dict>
