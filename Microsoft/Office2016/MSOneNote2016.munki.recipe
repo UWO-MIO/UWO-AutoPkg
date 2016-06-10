@@ -42,6 +42,12 @@ VERSION currently only supports 'latest'.</string>
             <string>%NAME%</string>
             <key>unattended_install</key>
             <true/>
+            <key>requires</key>
+            <array>
+              <string>Microsoft_Office_2016_VL_Serializer</string>
+            </array>
+            <key>category</key>
+            <string>Office</string>
         </dict>
     </dict>
     <key>ParentRecipe</key>

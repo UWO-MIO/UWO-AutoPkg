@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the latest PowerPoint 2016 multilingual update pkg,
+    <string>Downloads the latest Outlook 2016 multilingual update pkg,
 appends the version to the end of the filename, and imports into
 Munki.
 
@@ -17,20 +17,20 @@ for more information about locale IDs.
 
 VERSION currently only supports 'latest'.</string>
     <key>Identifier</key>
-    <string>com.github.autopkg.munki.MSPowerPoint2016</string>
+    <string>com.github.autopkg.munki.MSOutlook2016</string>
     <key>MinimumVersion</key>
     <string>0.4.2</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>MSPowerPoint2016</string>
+        <string>MSOutlook2016</string>
         <key>MUNKI_REPO_SUBDIR</key>
-        <string>apps/microsoft/Office2016/PowerPoint</string>
+        <string>apps/microsoft/Office2016/Outlook</string>
         <key>pkginfo</key>
         <dict>
             <key>blocking_applications</key>
             <array>
-                <string>Microsoft PowerPoint</string>
+                <string>Microsoft Outlook</string>
                 <string>Microsoft Error Reporting</string>
                 <string>Microsoft Auto Update</string>
             </array>
@@ -42,10 +42,16 @@ VERSION currently only supports 'latest'.</string>
             <string>%NAME%</string>
             <key>unattended_install</key>
             <true/>
+            <key>requires</key>
+            <array>
+              <string>Microsoft_Office_2016_VL_Serializer</string>
+            </array>
+            <key>category</key>
+            <string>Office</string>
         </dict>
     </dict>
     <key>ParentRecipe</key>
-    <string>com.github.autopkg.download.MSPowerPoint2016</string>
+    <string>com.github.autopkg.download.MSOutlook2016</string>
     <key>Process</key>
     <array>
         <dict>

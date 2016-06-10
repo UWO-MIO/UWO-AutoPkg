@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the latest Excel 2016 multilingual update pkg,
+    <string>Downloads the latest Word 2016 multilingual update pkg,
 appends the version to the end of the filename, and imports into
 Munki.
 
@@ -17,20 +17,20 @@ for more information about locale IDs.
 
 VERSION currently only supports 'latest'.</string>
     <key>Identifier</key>
-    <string>com.github.autopkg.munki.MSExcel2016</string>
+    <string>com.github.autopkg.munki.MSWord2016</string>
     <key>MinimumVersion</key>
     <string>0.4.2</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>MSExcel2016</string>
+        <string>MSWord2016</string>
         <key>MUNKI_REPO_SUBDIR</key>
-        <string>apps/microsoft/Office2016/Excel</string>
+        <string>apps/microsoft/Office2016/Word</string>
         <key>pkginfo</key>
         <dict>
             <key>blocking_applications</key>
             <array>
-                <string>Microsoft Excel</string>
+                <string>Microsoft Word</string>
                 <string>Microsoft Error Reporting</string>
                 <string>Microsoft Auto Update</string>
             </array>
@@ -42,10 +42,16 @@ VERSION currently only supports 'latest'.</string>
             <string>%NAME%</string>
             <key>unattended_install</key>
             <true/>
+            <key>requires</key>
+            <array>
+              <string>Microsoft_Office_2016_VL_Serializer</string>
+            </array>
+            <key>category</key>
+            <string>Office</string>
         </dict>
     </dict>
     <key>ParentRecipe</key>
-    <string>com.github.autopkg.download.MSExcel2016</string>
+    <string>com.github.autopkg.download.MSWord2016</string>
     <key>Process</key>
     <array>
         <dict>
