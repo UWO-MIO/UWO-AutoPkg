@@ -16,7 +16,7 @@
         <dict>
             <key>catalogs</key>
             <array>
-                <string>testing</string>
+                <string>Incoming</string>
             </array>
             <key>description</key>
             <string>Audacity is a free, easy-to-use, multi-track audio editor and recorder for Windows, Mac OS X, GNU/Linux and other operating systems.</string>
