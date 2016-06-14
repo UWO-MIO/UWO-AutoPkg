@@ -15,7 +15,7 @@
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/whitebox</string>
 		<key>MUNKI_CATEGORY</key>
-		<string>Utilities</string>
+		<string>Admin Tools</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>

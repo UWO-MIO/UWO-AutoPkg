@@ -19,7 +19,7 @@
 				<string>Incoming</string>
 			</array>
 			<key>category</key>
-			<string>Productivity</string>
+			<string>Collaboration</string>
 			<key>description</key>
 			<string>Google Drive sync for Mac. Access files on your computer from anywhere.</string>
 			<key>display_name</key>

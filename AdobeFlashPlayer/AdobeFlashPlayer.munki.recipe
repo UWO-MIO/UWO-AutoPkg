@@ -21,7 +21,7 @@
                 <string>Incoming</string>
             </array>
             <key>category</key>
-            <string>Internet Plugins</string>
+            <string>Plugins</string>
             <key>description</key>
             <string>Adobe® Flash® Player is a cross-platform browser-based application runtime that delivers uncompromised viewing of expressive applications, content, and videos across screens and browsers.</string>
             <key>display_name</key>

@@ -25,7 +25,7 @@ combination is offered.</string>
                 <string>Incoming</string>
             </array>
             <key>category</key>
-            <string>Browsers</string>
+            <string>Internet</string>
             <key>description</key>
             <string>Mozilla Firefox is a free and open source web browser.</string>
             <key>display_name</key>

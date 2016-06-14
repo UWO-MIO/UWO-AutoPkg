@@ -24,6 +24,8 @@ http://update.evernote.com/prerelease/ENMac/EvernoteMacUpdate.xml
             <array>
                 <string>Incoming</string>
             </array>
+            <key>category</key>
+            <string>Productivity</string>
             <key>description</key>
             <string>Evernote makes it easy to remember things big and small from your everyday life using your computer, phone, tablet and the web.</string>
             <key>display_name</key>

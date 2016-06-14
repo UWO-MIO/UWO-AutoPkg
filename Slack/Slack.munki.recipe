@@ -18,6 +18,8 @@
 			<array>
 				<string>Incoming</string>
 			</array>
+			<key>category</key>
+			<string>Collaboration</string>
 			<key>description</key>
 			<string>Slack is a platform for team communication: everything in one place, instantly searchable, available wherever you go.</string>
 			<key>display_name</key>

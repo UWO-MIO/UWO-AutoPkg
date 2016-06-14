@@ -47,7 +47,7 @@ VERSION currently only supports 'latest'.</string>
               <string>Microsoft_Office_2016_VL_Serializer</string>
             </array>
             <key>category</key>
-            <string>Office</string>
+            <string>Office 2016</string>
         </dict>
     </dict>
     <key>ParentRecipe</key>

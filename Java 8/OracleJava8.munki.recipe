@@ -30,6 +30,8 @@ the prefPane bundle, which has historically had consistent versioning.
             <array>
                 <string>Incoming</string>
             </array>
+            <key>category</key>
+      			<string>Plugins</string>
             <key>description</key>
             <string>Java SE Runtime Environment 8 enables support for running Java-powered applets and applications.</string>
             <key>display_name</key>

@@ -13,7 +13,7 @@
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/TeamViewer/full</string>
 		<key>MUNKI_CATEGORY</key>
-		<string>Internet</string>
+		<string>Support</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>

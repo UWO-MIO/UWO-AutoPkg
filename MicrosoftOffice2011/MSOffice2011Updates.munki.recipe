@@ -63,7 +63,7 @@ certificate for the downloaded update can still be manually verified, however.
                 <string>Incoming</string>
             </array>
             <key>category</key>
-            <string>Microsoft Office 2011</string>
+            <string>Office 2011</string>
             <key>update_for</key>
             <array>
                 <string>Office2011</string>
