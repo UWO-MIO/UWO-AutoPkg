@@ -1,116 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<!--This is still being developed-->
 <dict>
-    <key>Description</key>
-    <string>Downloads and imports KeyCastr via
-the official releases listing on GitHub.
-
-By default only "final" releases are included. Set INCLUDE_PRERELEASES
-to a non-empty value to include releases on GitHub marked as
-"prereleases."
-
-The GitHubReleasesInfoProvider processor used by this recipe also
-respects an input variable: 'sort_by_highest_tag_names', which
-if set, will ignore the post dates of the releases and instead sort
-descending by tag names according to LooseVersion semantics.</string>
-    <key>Identifier</key>
-    <string>com.github.mio.munki.keycastr</string>
-    <key>Input</key>
-    <dict>
-        <key>INCLUDE_PRERELEASES</key>
-        <string></string>
-        <key>NAME</key>
-        <string>KeyCastr</string>
-        <key>MUNKI_CATALOG</key>
-        <string>Incoming</string>
-        <key>MUNKI_REPO_SUBDIR</key>
-        <string>apps/KeyCastr</string>
-        <!--  -->
-        <key>KeyCastr_Name</key>
-        <string>KeyCastr</string>
-        <key>KeyCastr_DISPLAYNAME</key>
-        <string>KeyCastr</string>
-        <key>KeyCastr_DESCRIPTION</key>
-        <string>KeyCastr, an open-source keystroke visualizer.</string>
-    </dict>
-    <key>MinimumVersion</key>
-    <string>0.8.1</string>
-    <key>Process</key>
-    <array>
-        <dict>
-            <key>Processor</key>
-            <string>GitHubReleasesInfoProvider</string>
-            <key>Arguments</key>
-            <dict>
-                <key>asset_regex</key>
-                <string></string>
-                <key>github_repo</key>
-                <string>keycastr/keycastr</string>
-                <key>include_prereleases</key>
-                <string>%INCLUDE_PRERELEASES%</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>URLDownloader</string>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>EndOfCheckPhase</string>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>Unarchiver</string>
-            <key>Arguments</key>
-            <dict>
-                <key>archive_path</key>
-                <string>%pathname%</string>
-                <key>destination_path</key>
-                <string>%RECIPE_CACHE_DIR%/unpack</string>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>DMGCreator</string>
-            <key>Arguments</key>
-            <dict>
-                <key>dmg_root</key>
-                <string>%RECIPE_CACHE_DIR%/unpack</string>
-                <key>dmg_path</key>
-                <string>%Recipe_CACHE_DIR%/dmg/KeyCastr.dmg</string>
-                <dict/>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>MunkiImporter</string>
-            <key>Arguments</key>
-            <dict>
-                <key>repo_subdirectory</key>
-                <string>%MUNKI_REPO_SUBDIR%</string>
-                <key>pkg_path</key>
-                <string>%RECIPE_CACHE_DIR%/dmg/KeyCastr.dmg</string>
-                <key>pkginfo</key>
-                <dict>
-                    <key>catalogs</key>
-                    <array>
-                        <string>%MUNKI_CATALOG%</string>
-                    </array>
-                    <key>description</key>
-                    <string>%KeyCastr_DESCRIPTION%</string>
-                    <key>display_name</key>
-                    <string>%KeyCastr_DISPLAYNAME%</string>
-                    <key>minimum_os_version</key>
-                    <string>10.6.0</string>
-                    <key>name</key>
-                    <string>%KeyCastr_NAME%</string>
-                    <key>unattended_install</key>
-                    <true/>
-                </dict>
-            </dict>
-        </dict>
-    </array>
+	<key>Comment</key>
+	<string>Created with Recipe Robot v1.0.2 (https://github.com/homebysix/recipe-robot)</string>
+	<key>Description</key>
+	<string>Downloads the latest version of KeyCastr and imports it into Munki.</string>
+	<key>Identifier</key>
+	<string>com.github.uwo.autopkg.munki.KeyCastr</string>
+	<key>Input</key>
+	<dict>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/%NAME%</string>
+		<key>NAME</key>
+		<string>KeyCastr</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>Incoming</string>
+			</array>
+      <key>Category</key>
+      <string>Plugins</string>
+			<key>description</key>
+			<string>KeyCastr, an open-source keystroke visualizer</string>
+			<key>developer</key>
+			<string>KeyCastr</string>
+			<key>display_name</key>
+			<string>KeyCastr</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.6.1</string>
+	<key>ParentRecipe</key>
+	<string>com.github.uwo.autopkg.download.KeyCastr</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>archive_path</key>
+				<string>%pathname%</string>
+				<key>destination_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
+				<key>purge_destination</key>
+				<true/>
+			</dict>
+			<key>Processor</key>
+			<string>Unarchiver</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>dmg_path</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%.dmg</string>
+				<key>dmg_root</key>
+				<string>%RECIPE_CACHE_DIR%/%NAME%/Applications</string>
+			</dict>
+			<key>Processor</key>
+			<string>DmgCreator</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%dmg_path%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+		</dict>
+	</array>
 </dict>
 </plist>
