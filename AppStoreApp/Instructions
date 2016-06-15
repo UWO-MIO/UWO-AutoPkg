@@ -1,0 +1,11 @@
+
+
+<!-- on computer running AutoPkg run in terminal as three separate comands
+
+mkdir ~/Library/Python/2.7/lib/python/site-packages
+
+easy_install --install-dir="$HOME/Library/Python/2.7/lib/python/site-packages" https://github.com/geertj/python-asn1/archive/master.zip
+
+pip install --user git+https://github.com/geertj/python-asn1.git#egg=pyasn1
+
+-->
