@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads latest Google Chrome disk image and installs Google Chrome.</string>
     <key>Identifier</key>
-    <string>com.github.autopkg.MIO.install.googlechrome</string>
+    <string>com.github.UWO.autopkg.install.googlechrome</string>
     <key>Input</key>
     <dict>
         <key>DOWNLOAD_URL</key>
@@ -14,7 +14,7 @@
     <key>MinimumVersion</key>
     <string>0.4.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.autopkg.MIO.download.googlechrome</string>
+    <string>com.github.UWO.autopkg.download.googlechrome</string>
     <key>Process</key>
     <array>
         <dict>

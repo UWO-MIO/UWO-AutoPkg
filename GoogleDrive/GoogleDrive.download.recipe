@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
+  <!--Original recipe from com.github.autopkg.recipes-dankeller-->
 <dict>
     <key>Description</key>
     <string>Downloads latest Google Drive disk image.</string>
     <key>Identifier</key>
-    <string>com.github.autopkg.recipes-dankeller.download.google-drive</string>
+    <string>com.github.UWO.autopkg.download.google-drive</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>

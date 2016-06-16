@@ -2,12 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+  <!--Original recipe from com.github.timsutton-->
     <key>Description</key>
     <string>Downloads the current release version of Audacity via the project
 website. The downloads redirect to a fosshub.com download page, which
 is also searched for a download link.</string>
     <key>Identifier</key>
-    <string>com.github.timsutton.download.audacity</string>
+    <string>com.github.UWO.autopkg.download.audacity</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>

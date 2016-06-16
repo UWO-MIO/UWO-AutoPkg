@@ -9,7 +9,7 @@ Alternate Beta URL that can be used for SPARKLE_FEED_URL:
 http://update.evernote.com/prerelease/ENMac/EvernoteMacUpdate.xml
 </string>
     <key>Identifier</key>
-    <string>com.github.autopkg.MIO.download.Evernote</string>
+    <string>com.github.UWO.autopkg.download.Evernote</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>

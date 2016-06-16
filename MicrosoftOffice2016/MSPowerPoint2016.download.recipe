@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
+  <!--Original recipe from com.github.autopkg-->
 <dict>
     <key>Description</key>
     <string>Downloads the latest PowerPoint 2016 multilingual update pkg,
@@ -14,7 +15,7 @@ for more information about locale IDs.
 VERSION currently only supports 'latest'.
 </string>
     <key>Identifier</key>
-    <string>com.github.autopkg.download.MSPowerPoint2016</string>
+    <string>com.github.UWO.autopkg.download.MSPowerPoint2016</string>
     <key>MinimumVersion</key>
     <string>0.4.2</string>
     <key>Input</key>

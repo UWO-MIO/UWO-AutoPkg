@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
+    <!--Original recipe from com.github.joshua-d-miller-->
 <dict>
     <key>Description</key>
     <string>Download the latest version of RStudio and imports it into Munki.</string>
     <key>Identifier</key>
-    <string>com.github.joshua-d-miller.autopkg.munki.RStudio</string>
+    <string>com.github.UWO.autopkg.munki.RStudio</string>
     <key>Input</key>
     <dict>
         <key>MUNKI_REPO_SUBDIR</key>
@@ -39,7 +40,7 @@
     <key>MinimumVersion</key>
     <string>0.2.9</string>
     <key>ParentRecipe</key>
-    <string>com.github.hansen-m.download.RStudio</string>
+    <string>com.github.UWO.autopkg.download.RStudio</string>
     <key>Process</key>
     <array>
         <dict>

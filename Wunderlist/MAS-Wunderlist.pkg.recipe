@@ -7,7 +7,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Wunderlist from the Mac App Store and creates a package.</string>
 	<key>Identifier</key>
-	<string>com.github.uwo.autopkg.pkg.Wunderlist</string>
+	<string>com.github.UWO.autopkg.pkg.Wunderlist</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>

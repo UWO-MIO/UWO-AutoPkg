@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
+  <!--Original recipe from com.github.autopkg.nmcspadden-recipes-->
 <dict>
     <key>Description</key>
     <string>Downloads latest Google Earth Pro disk image.</string>
     <key>Identifier</key>
-    <string>com.github.autopkg.nmcspadden-recipes.download.google-earth-pro</string>
+    <string>com.github.UWO.autopkg.download.google-earth-pro</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>

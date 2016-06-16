@@ -2,10 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+  <!--Original recipe from com.github.timsutton-->
     <key>Description</key>
     <string>Downloads and imports Audacity into Munki.</string>
     <key>Identifier</key>
-    <string>com.github.timsutton.munki.audacity</string>
+    <string>com.github.UWO.autopkg.munki.audacity</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
@@ -31,7 +32,7 @@
     <key>MinimumVersion</key>
     <string>0.2.9</string>
     <key>ParentRecipe</key>
-    <string>com.github.timsutton.download.audacity</string>
+    <string>com.github.UWO.autopkg.download.audacity</string>
     <key>Process</key>
     <array>
         <dict>

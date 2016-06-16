@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
+		<!--Original recipe from io.github.hjuutilainen-->
 <dict>
 	<key>Description</key>
 	<string>Downloads the current release version of TeamViewer QuickSupport and imports into Munki. TeamViewer QuickSupport is a simple and small customer module, runs immediately without installation and does not require administrative rights - optimized for instant support</string>
 	<key>Identifier</key>
-	<string>io.github.hjuutilainen.munki.TeamViewerQS</string>
+	<string>com.github.UWO.autopkg.munki.TeamViewerQS</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
@@ -46,7 +47,7 @@
 	<key>MinimumVersion</key>
 	<string>0.2.0</string>
 	<key>ParentRecipe</key>
-	<string>io.github.hjuutilainen.download.TeamViewerQS</string>
+	<string>com.github.UWO.autopkg.download.TeamViewerQS</string>
 	<key>Process</key>
 	<array>
 		<dict>

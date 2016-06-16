@@ -7,7 +7,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of KeyCastr.</string>
 	<key>Identifier</key>
-	<string>com.github.uwo.autopkg.download.KeyCastr</string>
+	<string>com.github.UWO.autopkg.download.KeyCastr</string>
 	<key>Input</key>
 	<dict>
 		<key>GITHUB_REPO</key>

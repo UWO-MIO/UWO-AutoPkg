@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads latest version of Adium.</string>
     <key>Identifier</key>
-    <string>com.github.autopkg.MIO.download.Adium</string>
+    <string>com.github.UWO.autopkg.download.Adium</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
+<!--Original Recipe from com.github.jarias-->
   <dict>
     <key>Identifier</key>
-    <string>com.github.jarias.munki.atom</string>
+    <string>com.github.UWO.autopkg.munki.atom</string>
     <key>Description</key>
     <string>Downloads Atom and imports into Munki.</string>
     <key>Input</key>

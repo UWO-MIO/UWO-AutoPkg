@@ -5,14 +5,14 @@
 	<key>Description</key>
 	<string>Downloads the current release version of Packages and extracts the installer package.</string>
 	<key>Identifier</key>
-	<string>com.github.autopkg.MIO.pkg.Packages</string>
+	<string>com.github.UWO.autopkg.pkg.Packages</string>
 	<key>Input</key>
 	<dict>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.autopkg.MIO.download.Packages</string>
+	<string>com.github.UWO.autopkg.download.Packages</string>
 	<key>Process</key>
 	<array>
 		<dict>

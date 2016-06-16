@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
+	<!--Original recipe from com.github.keeleysam -->
 <dict>
 	<key>Description</key>
 	<string>Downloads the current release version of CarbonCopyCloner and builds a package.</string>
@@ -14,7 +15,7 @@
 	<key>MinimumVersion</key>
 	<string>0.3.1</string>
 	<key>ParentRecipe</key>
-	<string>com.github.keeleysam.recipes.CarbonCopyCloner.download</string>
+	<string>com.github.UWO.autopkg.CarbonCopyCloner.download</string>
 	<key>Process</key>
 	<array>
 		<dict>

@@ -9,7 +9,7 @@ Please note that the values for supported_architectures in this
 recipe's pkginfo may be only evaluated accurately for early-generation
 Intel Macs as of Munki tools version 0.9.2.</string>
     <key>Identifier</key>
-    <string>com.github.MIO.munki.VLC</string>
+    <string>com.github.UWO.autopkg.munki.VLC</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
@@ -41,7 +41,7 @@ Intel Macs as of Munki tools version 0.9.2.</string>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.MIO.download.VLC</string>
+    <string>com.github.UWO.autopkg.download.VLC</string>
     <key>Process</key>
     <array>
         <dict>

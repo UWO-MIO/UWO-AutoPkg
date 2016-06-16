@@ -5,14 +5,14 @@
 	<key>Description</key>
 	<string>Installs the current release version of Packages.</string>
 	<key>Identifier</key>
-	<string>com.github.autopkg.MIO.install.Packages</string>
+	<string>com.github.UWO.autopkg.install.Packages</string>
 	<key>Input</key>
 	<dict>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.autopkg.MIO.pkg.Packages</string>
+	<string>com.github.UWO.autopkg.pkg.Packages</string>
 	<key>Process</key>
 	<array>
 		<dict>

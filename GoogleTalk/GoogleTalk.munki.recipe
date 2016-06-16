@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Identifier</key>
-	<string>com.github.MIO.recipes.GoogleTalk</string>
+	<string>com.github.UWO.recipes.GoogleTalk</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
@@ -48,7 +48,7 @@
 		</dict>
 	</dict>
 	<key>ParentRecipe</key>
-	<string>com.github.MIO.autopkg.download.GoogleTalk</string>
+	<string>com.github.UWO.autopkg.download.GoogleTalk</string>
 	<key>Process</key>
 	<array>
 		<dict>

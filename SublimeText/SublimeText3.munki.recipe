@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
+    <!--Original recipe from com.github.jarias-->
   <dict>
     <key>ParentRecipe</key>
-    <string>com.github.jarias.download.SublimeText3</string>
+    <string>com.github.UWO.autopkg.download.SublimeText3</string>
 
     <key>Description</key>
     <string>Downloads the current release version of Sublime Text 3 and imports into Munki.</string>
     <key>Input</key>
     <dict>
       <key>IDENTIFIER</key>
-      <string>com.github.jarias.munki.SublimeText3</string>
+      <string>com.github.UWO.autopkg.munki.SublimeText3</string>
       <key>NAME</key>
       <string>SublimeText3</string>
       <key>MUNKI_REPO_SUBDIR</key>

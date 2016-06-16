@@ -2,12 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<!--Original Recipe from  com.github.novaksam.autopkg-->
 	<key>Description</key>
 	<string>Downloads updates for Acrobat DC.
 Set MAJOR_VERSION to "Acrobat2015" to download the 'Classic Track' updates for acrobat DC instead of the Continuous track.
 	</string>
 	<key>Identifier</key>
-	<string>com.github.novaksam.download.AdobeAcrobatDCUpdate</string>
+	<string>com.github.UWO.autopkg.download.AdobeAcrobatDCUpdate</string>
 	<key>Input</key>
 	<dict>
 		<key>LANGUAGE</key>

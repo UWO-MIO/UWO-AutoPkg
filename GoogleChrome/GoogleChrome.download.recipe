@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads latest Google Chrome disk image.</string>
     <key>Identifier</key>
-    <string>com.github.autopkg.MIO.download.googlechrome</string>
+    <string>com.github.UWO.autopkg.download.googlechrome</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>

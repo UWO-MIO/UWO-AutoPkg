@@ -11,7 +11,7 @@ Examples include 'en-US', 'de', 'ja-JP-mac', 'sv-SE', and 'zh-TW'
 No idea if all Firefox builds are available in all the same localizations, so you may need to verify that any particular
 combination is offered.</string>
     <key>Identifier</key>
-    <string>com.github.autopkg.MIO.munki.Firefox</string>
+    <string>com.github.UWO.autopkg.munki.Firefox</string>
     <key>Input</key>
     <dict>
         <key>MUNKI_REPO_SUBDIR</key>
@@ -39,7 +39,7 @@ combination is offered.</string>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.autopkg.MIO.download.firefox</string>
+    <string>com.github.UWO.autopkg.download.firefox</string>
     <key>Process</key>
     <array>
         <dict>

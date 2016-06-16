@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
+		<!--Original recipe from io.github.hjuutilainen-->
 <dict>
 	<key>Description</key>
 	<string>Installs the current release version of TeamViewer.</string>
 	<key>Identifier</key>
-	<string>io.github.hjuutilainen.install.TeamViewer</string>
+	<string>com.github.UWO.autopkg.install.TeamViewer</string>
 	<key>Input</key>
 	<dict>
 	</dict>
 	<key>MinimumVersion</key>
 	<string>0.4.0</string>
 	<key>ParentRecipe</key>
-	<string>io.github.hjuutilainen.download.TeamViewer</string>
+	<string>com.github.UWO.autopkg.download.TeamViewer</string>
 	<key>Process</key>
 	<array>
 		<dict>

@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads latest version of Adium and imports into a Munki repo.</string>
     <key>Identifier</key>
-    <string>com.github.autopkg.MIO.munki.Adium</string>
+    <string>com.github.UWO.autopkg.munki.Adium</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
@@ -33,7 +33,7 @@
     <key>MinimumVersion</key>
     <string>0.2.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.autopkg.MIO.download.Adium</string>
+    <string>com.github.UWO.autopkg.download.Adium</string>
     <key>Process</key>
     <array>
         <dict>

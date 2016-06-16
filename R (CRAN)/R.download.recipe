@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
+	<!--Original recipe from io.github.hjuutilainen-->
 <dict>
 	<key>Description</key>
 	<string>Downloads the latest R installer package. Set OS_RELEASE to either "snowleopard" or "mavericks".</string>
 	<key>Identifier</key>
-	<string>io.github.hjuutilainen.download.R</string>
+	<string>com.github.UWO.autopkg.download.R</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>

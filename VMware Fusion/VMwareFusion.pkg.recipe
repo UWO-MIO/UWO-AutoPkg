@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Takes .zip.tar VMware Fusion download and extracts the data</string>
 	<key>Identifier</key>
-	<string>com.github.MIO.pkg.VMwareFusion</string>
+	<string>com.github.UWO.autopkg.pkg.VMwareFusion</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
@@ -14,7 +14,7 @@
 	<key>MinimumVersion</key>
 	<string>0.2.5</string>
 	<key>ParentRecipe</key>
-	<string>com.github.MIO.download.VMwareFusion</string>
+	<string>com.github.UWO.autopkg.download.VMwareFusion</string>
 	<key>Process</key>
 	<array>
 		<dict>

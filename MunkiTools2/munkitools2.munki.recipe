@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
+  <!--Original recipe from com.github.autopkg-->
 <dict>
     <key>Description</key>
     <string>Downloads and imports version 2 of the Munki tools via
@@ -21,7 +22,7 @@ respects an input variable: 'sort_by_highest_tag_names', which
 if set, will ignore the post dates of the releases and instead sort
 descending by tag names according to LooseVersion semantics.</string>
     <key>Identifier</key>
-    <string>com.github.autopkg.munki.munkitools2</string>
+    <string>com.github.UWO.autopkg.munki.munkitools2</string>
     <key>Input</key>
     <dict>
         <key>INCLUDE_PRERELEASES</key>

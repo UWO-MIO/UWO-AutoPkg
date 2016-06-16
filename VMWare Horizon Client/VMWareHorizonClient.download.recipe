@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version Horizon Client for Mac.</string>
 	<key>Identifier</key>
-	<string>com.github.autopkg.MIO.download.VMwareHorizonClient</string>
+	<string>com.github.UWO.autopkg.download.VMwareHorizonClient</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>

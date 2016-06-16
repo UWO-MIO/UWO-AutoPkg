@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
+<!--Original Recipe from  com.github.joshua-d-miller.autopkg-->
 <dict>
     <key>Description</key>
     <string>Download the latest version of Adobe Acrobat DC and imports it into Munki.</string>
     <key>Identifier</key>
-    <string>com.github.joshua-d-miller.autopkg.munki.AdobeAcrobatDCUpdate</string>
+    <string>com.github.UWO.autopkg.munki.AdobeAcrobatDCUpdate</string>
     <key>Input</key>
     <dict>
         <key>MUNKI_REPO_SUBDIR</key>
@@ -39,7 +40,7 @@
     <key>MinimumVersion</key>
     <string>0.2.9</string>
     <key>ParentRecipe</key>
-    <string>com.github.novaksam.download.AdobeAcrobatDCUpdate</string>
+    <string>com.github.UWO.autopkg.download.AdobeAcrobatDCUpdate</string>
     <key>Process</key>
     <array>
         <dict>

@@ -5,14 +5,14 @@
     <key>Description</key>
     <string>Installs the current release version of Slack.</string>
     <key>Identifier</key>
-    <string>com.github.autopkg.MIO.Install.Slack</string>
+    <string>com.github.UWO.autopkg.Install.Slack</string>
     <key>Input</key>
     <dict>
     </dict>
     <key>MinimumVersion</key>
     <string>0.4.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.autopkg.MIO.pkg.Slack</string>
+    <string>com.github.UWO.autopkg.pkg.Slack</string>
     <key>Process</key>
     <array>
         <dict>

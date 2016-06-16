@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the current installation package for FileZilla. Imports it into Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.keeleysam.recipes.FileZilla.munki</string>
+	<string>com.github.UWO.autopkg.FileZilla.munki</string>
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
@@ -33,7 +33,7 @@
 	<key>MinimumVersion</key>
 	<string>0.2.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.keeleysam.recipes.FileZilla.download</string>
+	<string>com.github.UWO.autopkg.FileZilla.download</string>
 	<key>Process</key>
 	<array>
 		<dict>

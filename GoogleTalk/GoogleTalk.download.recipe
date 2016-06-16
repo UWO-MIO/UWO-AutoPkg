@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Identifier</key>
-	<string>com.github.MIO.autopkg.download.GoogleTalk</string>
+	<string>com.github.UWO.autopkg.download.GoogleTalk</string>
 	<key>Input</key>
 	<dict>
 		<key>DOWNLOAD_URL</key>

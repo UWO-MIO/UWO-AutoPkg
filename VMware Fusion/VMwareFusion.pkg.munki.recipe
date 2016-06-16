@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Imports the VMwareFusion package into Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.MIO.munki.VMwareFusion</string>
+	<string>com.github.UWO.autopkg.munki.VMwareFusion</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
@@ -33,7 +33,7 @@
 	<key>MinimumVersion</key>
 	<string>0.2.5</string>
 	<key>ParentRecipe</key>
-	<string>com.github.MIO.pkg.VMwareFusion</string>
+	<string>com.github.UWO.autopkg.pkg.VMwareFusion</string>
 	<key>Process</key>
 	<array>
 		<dict>

@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest Packages disk image.</string>
 	<key>Identifier</key>
-	<string>com.github.autopkg.MIO.download.Packages</string>
+	<string>com.github.UWO.autopkg.download.Packages</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
