@@ -21,6 +21,8 @@
 			<array>
 				<string>Incoming</string>
 			</array>
+			<key>Category</key>
+			<string>DeveloperTools</string>
 			<key>description</key>
 			<string>AutoPkgr makes it simple to get started using autopkg to automate Mac software packaging.</string>
 			<key>developer</key>
