@@ -6,7 +6,7 @@
     <key>Description</key>
     <string>Downloads latest Google Earth disk image.</string>
     <key>Identifier</key>
-    <string>ccom.github.UWO.autopkg.download.google-earth</string>
+    <string>com.github.UWO.autopkg.download.google-earth</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
