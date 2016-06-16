@@ -18,7 +18,7 @@
 	<key>MinimumVersion</key>
 	<string>0.6.1</string>
 	<key>ParentRecipe</key>
-	<string>com.github.nmcspadden.pkg.appstore</string>
+	<string>com.github.nmcspadden.munki.appstore</string>
 	<key>Process</key>
 	<array/>
 </dict>

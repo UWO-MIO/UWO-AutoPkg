@@ -6,7 +6,7 @@
 	<key>Description</key>
 	<string>Downloads the current release version of CarbonCopyCloner and builds a package.</string>
 	<key>Identifier</key>
-	<string>com.github.keeleysam.recipes.pkg.CarbonCopyCloner</string>
+	<string>com.github.UWO.autopkg.pkg.CarbonCopyCloner</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
