@@ -1,0 +1,4 @@
+#!/bin/sh
+sleep 30s
+python /PathTo/MunkiStaging/munki-staging.py --config /PathTo/munki-staging/munki-staging.cfg
+exit 0
