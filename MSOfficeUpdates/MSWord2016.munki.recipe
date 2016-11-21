@@ -33,7 +33,7 @@ the latest full update for the given CHANNEL.
         <key>NAME</key>
         <string>MSWord2016</string>
         <key>MUNKI_REPO_SUBDIR</key>
-        <string>apps</string>
+        <string>apps/microsoft/Office2016/Word-Standalone</string>
         <key>munki_required_update_name</key>
         <string></string>
         <key>pkginfo</key>
@@ -46,10 +46,10 @@ the latest full update for the given CHANNEL.
             </array>
             <key>catalogs</key>
             <array>
-                <string>testing</string>
+                <string>Incoming</string>
             </array>
             <key>display_name</key>
-            <string>Microsoft Word for Mac</string>
+            <string>Microsoft Word 2016 for Mac</string>
             <key>name</key>
             <string>%NAME%</string>
             <key>unattended_install</key>
