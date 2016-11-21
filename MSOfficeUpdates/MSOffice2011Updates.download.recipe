@@ -1,43 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-  <!--Original recipe from com.github.autopkg-->
 <dict>
     <key>Description</key>
-    <string>Downloads the latest OneNote 2016 multilingual update pkg,
-and appends the version to the end of the filename.
+    <string>Finds latest Office 2011 update and downloads the disk image.
+Set VERSION to a specific version number to download that version instead.
+Set CULTURE_CODE to a different value to get a different localization. See
+http://msdn.microsoft.com/en-us/library/ee825488(v=cs.20).aspx for a table of Culture Codes.
 
-LOCALE_ID sets the locale for a descriptive text that will be
-extracted from the Microsoft update metadata. See
-https://msdn.microsoft.com/en-us/goglobal/bb964664.aspx
-for more information about locale IDs.
-
-VERSION currently only supports 'latest'.
+If you would like to use an undocumented HTTPS download, set DOWNLOAD_URL_SCHEME to https.
 </string>
     <key>Identifier</key>
-    <string>com.github.UWO.autopkg.download.MSOneNote2016</string>
-    <key>MinimumVersion</key>
-    <string>0.4.2</string>
+    <string>com.github.autopkg.download.Office2011Updates</string>
     <key>Input</key>
     <dict>
-        <key>LOCALE_ID</key>
-        <string>1033</string>
         <key>NAME</key>
-        <string>MSOneNote2016</string>
+        <string>Office2011_update</string>
         <key>VERSION</key>
         <string>latest</string>
+        <key>CULTURE_CODE</key>
+        <string>0409</string>
+        <key>DOWNLOAD_URL_SCHEME</key>
+        <string>http</string>
     </dict>
+    <key>MinimumVersion</key>
+    <string>0.6.0</string>
     <key>Process</key>
     <array>
         <dict>
             <key>Processor</key>
-            <string>MSOffice2016URLandUpdateInfoProvider</string>
+            <string>MSOffice2011UpdateInfoProvider</string>
             <key>Arguments</key>
             <dict>
-                <key>locale_id</key>
-                <string>%LOCALE_ID%</string>
-                <key>product</key>
-                <string>OneNote</string>
+                <key>culture_code</key>
+                <string>%CULTURE_CODE%</string>
+                <key>munki_update_name</key>
+                <string>%NAME%</string>
                 <key>version</key>
                 <string>%VERSION%</string>
             </dict>
@@ -45,11 +43,6 @@ VERSION currently only supports 'latest'.
         <dict>
             <key>Processor</key>
             <string>URLDownloader</string>
-            <key>Arguments</key>
-            <dict>
-                <key>filename</key>
-                <string>%NAME%-%version%.pkg</string>
-            </dict>
         </dict>
         <dict>
             <key>Processor</key>
@@ -61,10 +54,10 @@ VERSION currently only supports 'latest'.
             <key>Arguments</key>
             <dict>
                 <key>input_path</key>
-                <string>%pathname%</string>
+                <string>%pathname%/Office*.*pkg</string>
                 <key>expected_authority_names</key>
                 <array>
-                    <string>Developer ID Installer: Microsoft Corporation (UBF8T346G9)</string>
+                    <string>Developer ID Installer: Microsoft Corporation</string>
                     <string>Developer ID Certification Authority</string>
                     <string>Apple Root CA</string>
                 </array>

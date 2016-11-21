@@ -19,10 +19,8 @@
 """See docstring for MSOffice2016URLandUpdateInfoProvider class"""
 
 import plistlib
-import urllib2
 import re
-
-from operator import itemgetter
+import urllib2
 
 from autopkglib import Processor, ProcessorError
 
@@ -32,7 +30,7 @@ __all__ = ["MSOffice2016URLandUpdateInfoProvider"]
 # CULTURE_CODE defaulting to 'en-US' as the installers and updates seem to be
 # multilingual.
 CULTURE_CODE = "0409"
-BASE_URL = "http://www.microsoft.com/mac/autoupdate/%s15.xml"
+BASE_URL = "https://officecdn.microsoft.com/pr/%s/OfficeMac/%s15.xml"
 PROD_DICT = {
     'Excel':'XCEL',
     'OneNote':'ONMC',
@@ -41,6 +39,14 @@ PROD_DICT = {
     'Word':'MSWD',
 }
 LOCALE_ID_INFO_URL = "https://msdn.microsoft.com/en-us/goglobal/bb964664.aspx"
+SUPPORTED_VERSIONS = ["latest", "latest-delta"]
+DEFAULT_VERSION = "latest"
+CHANNELS = {
+    'Production': 'C1297A47-86C4-4C1F-97FA-950631F94777',
+    'InsiderSlow': '1ac37578-5a24-40fb-892e-b89d85b6dfaa',
+    'InsiderFast': '4B2D7701-0A4F-49C8-B4CB-0C2D4043F51F',
+}
+DEFAULT_CHANNEL = "Production"
 
 class MSOffice2016URLandUpdateInfoProvider(Processor):
     """Provides a download URL for the most recent version of MS Office 2016."""
@@ -61,11 +67,31 @@ class MSOffice2016URLandUpdateInfoProvider(Processor):
         },
         "version": {
             "required": False,
-            "default": "latest",
-            "description": ("Update version to fetch. Currently the only "
-                            "supported value is 'latest', which is the "
-                            "default."),
+            "default": DEFAULT_VERSION,
+            "description": ("Update type to fetch. Supported values are: "
+                            "'%s'. Defaults to %s."
+                            % ("', '".join(SUPPORTED_VERSIONS),
+                               DEFAULT_VERSION)),
         },
+        "munki_required_update_name": {
+            "required": False,
+            "default": "",
+            "description":
+                ("If the update is a delta, a 'requires' key will be set "
+                 "according to the minimum version defined in the MS "
+                 "metadata. If this key is set, this name will be used "
+                 "for the required item. If unset, NAME will be used.")
+        },
+        "channel": {
+            "required": False,
+            "default": DEFAULT_CHANNEL,
+            "description":
+                ("Update feed channel that will be checked for updates. "
+                 "Defaults to %s, acceptable values are either a custom "
+                 "UUID or one of: %s" % (
+                    DEFAULT_CHANNEL,
+                    ", ".join(CHANNELS.keys())))
+        }
     }
     output_variables = {
         "additional_pkginfo": {
@@ -87,11 +113,18 @@ class MSOffice2016URLandUpdateInfoProvider(Processor):
                 ("The minimum os version required by the update as extracted "
                  "from the Microsoft metadata.")
         },
+        "minimum_version_for_delta": {
+            "description":
+                ("If this update is a delta, this value will be set to the "
+                 "minimum required application version to which this delta "
+                 "can be applied. Otherwise it will be an empty string.")
+        },
         "url": {
             "description": "URL to the latest installer.",
         },
     }
     description = __doc__
+    min_delta_version = ""
 
     def sanity_check_expected_triggers(self, item):
         """Raises an exeception if the Trigger Condition or
@@ -104,10 +137,6 @@ class MSOffice2016URLandUpdateInfoProvider(Processor):
             raise ProcessorError(
                 "Unexpected Trigger Condition in item %s: %s"
                 % (item["Title"], item["Trigger Condition"]))
-        if not "Registered File" in item.get("Triggers", {}):
-            raise ProcessorError(
-                "Missing expected 'and Registered File' Trigger in item "
-                "%s" % item["Title"])
 
     def get_installs_items(self, item):
         """Attempts to parse the Triggers to create an installs item using
@@ -115,8 +144,10 @@ class MSOffice2016URLandUpdateInfoProvider(Processor):
         CFBundleShortVersionString are equal."""
         self.sanity_check_expected_triggers(item)
         version = self.get_version(item)
+        # Skipping CFBundleShortVersionString because it doesn't contain
+        # anything more specific than major.minor (no build versions
+        # distinguishing Insider builds for example)
         installs_item = {
-            "CFBundleShortVersionString": version,
             "CFBundleVersion": version,
             "path": ("/Applications/Microsoft %s.app" % self.env["product"]),
             "type": "application",
@@ -125,54 +156,40 @@ class MSOffice2016URLandUpdateInfoProvider(Processor):
 
     def get_version(self, item):
         """Extracts the version of the update item."""
-        # We currently expect the version at the end of the Title key,
-        # e.g.: "Microsoft Excel Update 15.10.0"
-        # item["Title"] = "Microsoft Excel Update 15.10"
-        match = re.search(
-            r"( Update )(?P<version>\d+\.\d+(\.\d)*)", item["Title"])
-        if not match:
-            raise ProcessorError(
-                "Error validating Office 2016 version extracted "
-                "from Title manifest value: '%s'" % item["Title"])
-        version = match.group('version')
-        return version
-
-    def value_to_os_version_string(self, value):
-        """Converts a value to an OS X version number"""
-        if isinstance(value, int):
-            version_str = hex(value)[2:]
-        elif isinstance(value, basestring):
-            if value.startswith('0x'):
-                version_str = value[2:]
-        # OS versions are encoded as hex:
-        # 4184 = 0x1058 = 10.5.8
-        major = 0
-        minor = 0
-        patch = 0
-        try:
-            if len(version_str) == 1:
-                major = int(version_str[0])
-            if len(version_str) > 1:
-                major = int(version_str[0:2])
-            if len(version_str) > 2:
-                minor = int(version_str[2], 16)
-            if len(version_str) > 3:
-                patch = int(version_str[3], 16)
-        except ValueError:
-            raise ProcessorError("Unexpected value in version: %s" % value)
-        return "%s.%s.%s" % (major, minor, patch)
+        # If the 'Update Version' key exists we pull the "full" version string
+        # easily from this
+        if item.get("Update Version"):
+            self.output(
+                "Extracting version %s from metadata 'Update Version' key" %
+                item["Update Version"])
+            return item["Update Version"]
 
     def get_installer_info(self):
         """Gets info about an installer from MS metadata."""
-        base_url = BASE_URL % (CULTURE_CODE + PROD_DICT[self.env["product"]])
-        version_str = self.env["version"]
+        # Get the channel UUID, matching against a custom UUID if one is given
+        channel_input = self.env.get("channel", DEFAULT_CHANNEL)
+        rex = r"^([0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12})$"
+        match_uuid = re.match(rex, channel_input)
+        if not match_uuid and channel_input not in CHANNELS.keys():
+            raise ProcessorError(
+                "'channel' input variable must be one of: %s or a custom "
+                "uuid" % (", ".join(CHANNELS.keys())))
+        if match_uuid:
+            channel = match_uuid.groups()[0]
+        else:
+            channel = CHANNELS[channel_input]
+        base_url = BASE_URL % (channel,
+                               CULTURE_CODE + PROD_DICT[self.env["product"]])
+
         # Get metadata URL
         req = urllib2.Request(base_url)
         # Add the MAU User-Agent, since MAU feed server seems to explicitly
         # block a User-Agent of 'Python-urllib/2.7' - even a blank User-Agent
         # string passes.
-        req.add_header("User-Agent",
-                       "Microsoft%20AutoUpdate/3.0.6 CFNetwork/720.2.4 Darwin/14.4.0 (x86_64)")
+        req.add_header(
+            "User-Agent",
+            "Microsoft%20AutoUpdate/3.6.16080300 CFNetwork/760.6.3 Darwin/15.6.0 (x86_64)")
+
         try:
             fdesc = urllib2.urlopen(req)
             data = fdesc.read()
@@ -181,12 +198,19 @@ class MSOffice2016URLandUpdateInfoProvider(Processor):
             raise ProcessorError("Can't download %s: %s" % (base_url, err))
 
         metadata = plistlib.readPlistFromString(data)
-        if version_str == "latest":
-            # Still sort by date, in case we should ever need to support
-            # fetching versions other than 'latest'.
-            sorted_metadata = sorted(metadata, key=itemgetter('Date'))
-            # choose the last item, which should be most recent.
-            item = sorted_metadata[-1]
+        item = {}
+        # According to MS, update feeds for a given 'channel' will only ever
+        # have two items: a full and a delta. Delta updates will have a
+        # 'FullUpdaterLocation' key, so filter by the array according to
+        # which item has that key.
+        if self.env["version"] == "latest":
+            item = [u for u in metadata if not u.get("FullUpdaterLocation")]
+        elif self.env["version"] == "latest-delta":
+            item = [u for u in metadata if u.get("FullUpdaterLocation")]
+        if not item:
+            raise ProcessorError("Could not find an applicable update in "
+                                 "update metadata.")
+        item = item[0]
 
         self.env["url"] = item["Location"]
         self.output("Found URL %s" % self.env["url"])
@@ -210,24 +234,53 @@ class MSOffice2016URLandUpdateInfoProvider(Processor):
         pkginfo["description"] = "<html>%s</html>" % manifest_description
         self.env["description"] = manifest_description
 
-        max_os = self.value_to_os_version_string(item['Max OS'])
-        min_os = self.value_to_os_version_string(item['Min OS'])
-        if max_os != "0.0.0":
-            pkginfo["maximum_os_version"] = max_os
-        if min_os != "0.0.0":
-            pkginfo["minimum_os_version"] = min_os
+        # Minimum OS version key should exist always, but default to the current
+        # minimum as of 16/11/03
+        pkginfo["minimum_os_version"] = item.get('Minimum OS', '10.10.5')
         installs_items = self.get_installs_items(item)
         if installs_items:
             pkginfo["installs"] = installs_items
 
+        # Extra work to do if this is a delta updater
+        if self.env["version"] == "latest-delta":
+            try:
+                rel_versions = item["Triggers"]["Registered File"]["VersionsRelative"]
+            except KeyError:
+                raise ProcessorError("Can't find expected VersionsRelative"
+                                     "keys for determining minimum update "
+                                     "required for delta update.")
+            for expression in rel_versions:
+                operator, ver_eval = expression.split()
+                if operator == ">=":
+                    self.min_delta_version = ver_eval
+                    break
+            if not self.min_delta_version:
+                raise ProcessorError("Not able to determine minimum required "
+                                     "version for delta update.")
+            # Put minimum_update_version into installs item
+            self.output("Adding minimum required version: %s" %
+                        self.min_delta_version)
+            pkginfo["installs"][0]["minimum_update_version"] = \
+                self.min_delta_version
+            required_update_name = self.env["NAME"]
+            if self.env["munki_required_update_name"]:
+                required_update_name = self.env["munki_required_update_name"]
+            # Add 'requires' array
+            pkginfo["requires"] = ["%s-%s" % (required_update_name,
+                                              self.min_delta_version)]
+
         self.env["version"] = self.get_version(item)
-        self.env["minimum_os_version"] = min_os
+        self.env["minimum_os_version"] = pkginfo["minimum_os_version"]
+        self.env["minimum_version_for_delta"] = self.min_delta_version
         self.env["additional_pkginfo"] = pkginfo
         self.env["url"] = item["Location"]
         self.output("Additional pkginfo: %s" % self.env["additional_pkginfo"])
 
     def main(self):
         """Get information about an update"""
+        if self.env["version"] not in SUPPORTED_VERSIONS:
+            raise ProcessorError("Invalid 'version': supported values are '%s'"
+                                 % "', '".join(SUPPORTED_VERSIONS))
         self.get_installer_info()
 
 
