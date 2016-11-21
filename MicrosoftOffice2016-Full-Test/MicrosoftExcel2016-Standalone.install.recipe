@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads and installs the latest Microsoft Excel 2016 'Standalone' version.</string>
 	<key>Identifier</key>
-	<string>com.github.UWO.autopkg.install.MicrosoftExcelAlone-Old</string>
+	<string>com.github.UWO.autopkg.install.MicrosoftExcelAlone</string>
 	<key>Input</key>
 	<dict>
 		<key>MSTYPE</key>
@@ -14,7 +14,7 @@
 	<key>MinimumVersion</key>
 	<string>0.4.2</string>
 	<key>ParentRecipe</key>
-	<string>com.github.UWO.autopkg.download.MicrosoftExcelAlone-Old</string>
+	<string>com.github.UWO.autopkg.download.MicrosoftExcelAlone</string>
 	<key>Process</key>
 	<array>
 		<dict>
