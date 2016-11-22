@@ -16,16 +16,12 @@ http://update.evernote.com/prerelease/ENMac/EvernoteMacUpdate.xml
         <string>Evernote</string>
         <key>MUNKI_REPO_SUBDIR</key>
         <string>apps/Evernote</string>
-        <key>SPARKLE_FEED_URL</key>
-        <string>https://update.evernote.com/public/ENMac/EvernoteMacUpdate.xml</string>
         <key>pkginfo</key>
         <dict>
             <key>catalogs</key>
             <array>
-                <string>Incoming</string>
+                <string>testing</string>
             </array>
-            <key>category</key>
-            <string>Productivity</string>
             <key>description</key>
             <string>Evernote makes it easy to remember things big and small from your everyday life using your computer, phone, tablet and the web.</string>
             <key>display_name</key>
