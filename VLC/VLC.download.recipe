@@ -15,6 +15,8 @@ version 2.1.0. For this reason, the appcast_url variable is now hardcoded in the
     <dict>
         <key>NAME</key>
         <string>VLC</string>
+        <key>CHECK_FILESIZE_ONLY</key>
+        <true/>
     </dict>
     <key>MinimumVersion</key>
     <string>0.4.0</string>
