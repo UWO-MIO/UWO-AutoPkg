@@ -10,52 +10,45 @@ is also searched for a download link.</string>
     <key>Identifier</key>
     <string>com.github.UWO.autopkg.download.audacity</string>
     <key>Input</key>
+<dict>
+    <key>NAME</key>
+    <string>Audacity</string>
+</dict>
+<key>MinimumVersion</key>
+<string>0.2.9</string>
+<key>Process</key>
+<array>
     <dict>
-        <key>NAME</key>
-        <string>Audacity</string>
+        <key>Processor</key>
+        <string>URLTextSearcher</string>
+        <key>Arguments</key>
+        <dict>
+            <key>url</key>
+            <string>http://audacityteam.org/download/mac</string>
+            <!-- More specific than http://audacityteam.org, which shows Windows links by default -->
+            <key>re_pattern</key>
+            <string>(?P&lt;first_url&gt;http.*?dmg)</string>
+        </dict>
     </dict>
-    <key>MinimumVersion</key>
-    <string>0.2.9</string>
-    <key>Process</key>
-    <array>
+    <dict>
+        <key>Processor</key>
+        <string>URLTextSearcher</string>
+        <key>Arguments</key>
         <dict>
-            <key>Processor</key>
-            <string>URLTextSearcher</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>http://audacityteam.org/download/mac</string>
-                <!-- More specific than http://audacityteam.org, which shows Windows links by default -->
-                <key>re_pattern</key>
-                <string>(?P&lt;first_url&gt;http.*?dmg)</string>
-            </dict>
+            <key>url</key>
+            <string>%first_url%</string>
+            <key>re_pattern</key>
+            <string>iframe.*src=\"(?P&lt;url&gt;http.*\.dmg)\".*</string>
         </dict>
-        <dict>
-            <key>Processor</key>
-            <string>URLTextSearcher</string>
-            <key>Arguments</key>
-            <dict>
-                <key>url</key>
-                <string>%first_url%</string>
-                <key>re_pattern</key>
-                <string>(?P&lt;url&gt;http.*?dmg)</string>
-                <key>request_headers</key>
-                <dict>
-                    <!-- A Mac User-Agent seems to be required -->
-                    <key>User-Agent</key>
-                    <string>Mozilla/5.0 (Macintosh; Intel Mac OS X)</string>
-                </dict>
-            </dict>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>URLDownloader</string>
-        </dict>
-        <dict>
-            <key>Processor</key>
-            <string>EndOfCheckPhase</string>
-        </dict>
-    </array>
+    </dict>
+    <dict>
+        <key>Processor</key>
+        <string>URLDownloader</string>
+    </dict>
+    <dict>
+        <key>Processor</key>
+        <string>EndOfCheckPhase</string>
+    </dict>
+</array>
 </dict>
 </plist>
-Status API Training Shop Blog About
