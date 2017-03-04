@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-  <!--Original recipe from com.github.autopkg.nmcspadden-recipes-->
+<!--Original recipe from com.github.autopkg.nmcspadden-recipes-->
 <dict>
     <key>Description</key>
     <string>Downloads latest Google Earth Pro disk image.</string>
@@ -42,7 +42,7 @@
 				<string>%pathname%/*.pkg</string>
                 <key>expected_authority_names</key>
                 <array>
-                    <string>Developer ID Installer: Google Inc.</string>
+                    <string>Developer ID Installer: Google, Inc. (EQHXZ8M8AV)</string>
                     <string>Developer ID Certification Authority</string>
                     <string>Apple Root CA</string>
                 </array>
